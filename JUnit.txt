@@ -1,0 +1,71 @@
+
+JUnit
+======
+
+JUnit is a unit testing framework for the java. This has been important in the development of Test-Driven development.
+
+JUnit is a widely used testing framework for Java applications, primarily designed for unit testing. It allows developers to write and run tests to ensure that their code behaves as expected. JUnit provides a simple structure for writing tests, making it easier to maintain and execute them.
+
+Test-Driven development: 
+-------------------------
+Generating test-cases initially as per requirements and designing code/logic as per these test-cases until all the test-cases gets passed.
+
+JUnit5(Supported by Jupiter API):
+----------------------------------
+
+Basic Annotations Used in JUnit =>
+====================================
+
+JUnit provides several annotations that help define the lifecycle of tests. Here are some of the most commonly used annotations:
+
+1. @Test:  Marks a method as a test case. This is where the         actual testing logic is implemented.
+
+2. @BeforeClass:  Indicates that a method should be executed once before any of the test methods in the class. It must be static.
+
+3. @AfterClass:  Indicates that a method should be executed once after all the test methods in the class have been run. It must also be static.
+
+4. @Before:  Marks a method that should be executed before each test method. This is useful for setting up common test data or initializing objects.
+
+5. @After:  Marks a method that should be executed after each test method. This is typically used for cleanup tasks, such as releasing resources.
+
+6.@Ignore:  Indicates that a test method should be ignored and not executed. This is useful for temporarily disabling tests.
+
+These annotations streamline the testing process and enhance the readability and maintainability of test code. By using these annotations, developers can clearly define the setup, execution, and teardown phases of their tests, leading to more robust and reliable testing practices.
+
+
+ctrl + shift + t
+
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+
+
+Important Annotation in Junit:
+================================
+1. @Test: Method which is to be run as test case.
+2. @BeforeAll: Runs before all test case or once for a class
+ - Add static as it runs while loading the class
+3. @TestInstance(TestInstance.Lifecycle.PER_CLASS): It'll run @BeforeAll/@AfterAll without adding method as static
+i.e, it creates an test instance to run BA And AA without static.
+4. @AfterAll: Runs After all test case or once for a class
+5. @BeforeEach: Runs before running each test cases
+6. @AfterEach: Runs after running each test cases
+7. @DisplayName: To add proper name of test case
+8. @Disabled: To disable particular test case.
+
+Assert Class:
+===============
+1. void assertEquals(boolean expected,boolean actual): checks that two primitives/objects are equal. It is overloaded.
+2. void assertTrue(boolean condition): checks that a condition is true.
+3. void assertFalse(boolean condition): checks that a condition is false.
+4. void assertNull(Object obj): checks that object is null.
+5. void assertNotNull(Object obj): checks that object is not null.
